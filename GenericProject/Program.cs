@@ -1,6 +1,6 @@
 ﻿class Comparison
 {
-    public static int FindMaxIntNumber(int first, int second, int third)
+    public static float FindMaxFloatNumber(float first, float second, float third)
     {
         if ((first.CompareTo(second) >0)&&(first.CompareTo(third)>0))
         {
@@ -22,18 +22,19 @@
     }
     public static void Main(string[] args)
     {
-        Console.WriteLine("Enter three numbers:");
-        int a = Convert.ToInt32(Console.ReadLine());
-        int b = Convert.ToInt32(Console.ReadLine());
-        int c = Convert.ToInt32(Console.ReadLine());
-        int max = FindMaxIntNumber(a, b, c);
-        if (max==0)
+        Console.WriteLine("Enter three float numbers:");
+        float firstfloat = Convert.ToSingle(Console.ReadLine());
+
+        float secondfloat = Convert.ToSingle(Console.ReadLine());
+        float thirdfloat = Convert.ToSingle(Console.ReadLine());
+        float maxfloat = FindMaxFloatNumber(firstfloat, secondfloat, thirdfloat);
+        if (maxfloat==0)
         {
             Console.WriteLine("All three numbers are equal!!!");
         }
         else
         {
-            Console.WriteLine("Maximum among three:"+max);
+            Console.WriteLine("Maximum among three:"+maxfloat);
         }
     }
 }
