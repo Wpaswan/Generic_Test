@@ -6,35 +6,34 @@ using System.Threading.Tasks;
 
 namespace GenericProject
 {
-    internal class Generic<T> where T : IComparable
+    internal class GenericMaximum<T> where T : IComparable
     {
-        public T first,second, third;
-       public Generic(T first, T second,T third)
+        public T[] values;
+        public GenericMaximum(T[] values)
         {
-            this.first = first;
-            this.second = second;
-            this.third = third;
-            FindMax();
+            this.values = values;
         }
-        public void FindMax()
+        public T[] Sort(T[] values)
         {
-            if ((first.CompareTo(second) >0)&&(first.CompareTo(third)>0))
-            {
-                Console.WriteLine(first+" is greates");
-            }
-            else if ((second.CompareTo(first)>0)&&(second.CompareTo(third)>0))
-            {
-                Console.WriteLine(second+" is greatest");
-            }
-            else if ((third.CompareTo(second)>0)&&(third.CompareTo(first)>0))
-            {
-                Console.WriteLine(third+" is greatest");
-            }
-            else
-            {
-                Console.WriteLine("All are equal");
-
-            }
+            Array.Sort(values);
+            return values;
         }
+        public T MaxValue(T[] values)
+        {
+            var SortedValues = Sort(values);
+            return SortedValues[this.values.Length-1];
+               
+        }
+        public T MaxMethod()
+        {
+            var max = MaxValue(this.values);
+            return max;
+        }
+        public void PrintMaxValue()
+        {
+            var max=MaxValue(this.values);
+            Console.WriteLine("Maximum value is: "+max);
+        }
+        
     }
 }
