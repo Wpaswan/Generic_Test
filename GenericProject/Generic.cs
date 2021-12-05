@@ -29,7 +29,7 @@ namespace GenericProject
             var max = MaxValue(this.values);
             return max;
         }
-        public void PrintMaxValue()
+        public void PrintMaxValueOfArray()
         {
             var max=MaxValue(this.values);
             Console.WriteLine("Maximum value is: "+max);
