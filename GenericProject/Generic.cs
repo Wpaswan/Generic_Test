@@ -8,7 +8,15 @@ namespace GenericProject
 {
     internal class Generic<T> where T : IComparable
     {
-        public void FindMax(T first, T second, T third)
+        public T first,second, third;
+       public Generic(T first, T second,T third)
+        {
+            this.first = first;
+            this.second = second;
+            this.third = third;
+            FindMax();
+        }
+        public void FindMax()
         {
             if ((first.CompareTo(second) >0)&&(first.CompareTo(third)>0))
             {
